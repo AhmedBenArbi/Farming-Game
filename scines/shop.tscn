@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://trash/farmingTilesheetComplete.png" type="Texture" id=1]
+[ext_resource path="res://scritps/shop.gd" type="Script" id=2]
+[ext_resource path="res://scines/shopmenu.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scines/berry_seedpack.tscn" type="PackedScene" id=4]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 16, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ SubResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 174, 34, 29 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ SubResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 14.0158, 12.8872 )
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 13.0826
+
+[node name="shop" type="StaticBody2D"]
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -0.529732, 6.48921 )
+frames = SubResource( 2 )
+
+[node name="shoppart" type="AnimatedSprite" parent="."]
+frames = SubResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.333374, 4.5528 )
+shape = SubResource( 5 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -0.630676, 14.5055 )
+shape = SubResource( 6 )
+
+[node name="shopmenu" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( -32.0362, -51.0577 )
+
+[node name="berry_seedpack" parent="." instance=ExtResource( 4 )]
+visible = false
+position = Vector2( 19.8425, 11.5087 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
