@@ -5,7 +5,7 @@ func _ready():
 	$shopmenu.visible = false
 
 func _process(delta):
-	if Global.weather == "rain":
+	if Global.weather == "rain" or Global.night_time:
 		$AnimatedSprite.visible = false
 		$shopmenu.visible = false
 	elif Global.weather == "none":

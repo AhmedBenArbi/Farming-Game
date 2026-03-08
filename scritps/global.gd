@@ -1,6 +1,7 @@
  extends Node
 
 var plantselected = 1
+var night_time = false
 
 var numofcarrots = 0
 var numofonions = 0

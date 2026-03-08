@@ -19,28 +19,28 @@ func _ready():
 	
 func _physics_process(delta):
 	if(Global.numofonions > 0):
-		$menu/oniontext.visible = true
-		$menu/onionicon.visible = true
+		$Camera2D/oniontext.visible = true
+		$Camera2D/onionicon.visible = true
 	elif(Global.numofonions == 0):
-		$menu/oniontext.visible = false
-		$menu/onionicon.visible = false
+		$Camera2D/oniontext.visible = false
+		$Camera2D/onionicon.visible = false
 	if(Global.numofcarrots > 0):
-		$menu/carrottext.visible = true
-		$menu/carroticon.visible = true
+		$Camera2D/carrottext.visible = true
+		$Camera2D/carroticon.visible = true
 	elif(Global.numofcarrots == 0):
-		$menu/carrottext.visible = false
-		$menu/carroticon.visible = false
+		$Camera2D/carrottext.visible = false
+		$Camera2D/carroticon.visible = false
 	if(Global.numofberry > 0):
-		$menu/berrytext.visible = true
-		$menu/berryicon.visible = true
+		$Camera2D/berrytext.visible = true
+		$Camera2D/berryicon.visible = true
 	elif(Global.numofberry == 0):
-		$menu/berrytext.visible = false
-		$menu/berryicon.visible = false
-	$menu/oniontext.text = ("= " + str(Global.numofonions))
-	$menu/carrottext.text = ("= " + str(Global.numofcarrots))
-	$menu/berrytext.text = ("= " + str(Global.numofberry))
-	$menu/coinstext.text = ("= " + str(Global.coins))
-	$menu/coinstext2.text = ("= " + str(Global.coins))
+		$Camera2D/berrytext.visible = false
+		$Camera2D/berryicon.visible = false
+	$Camera2D/oniontext.text =  str(Global.numofonions)
+	$Camera2D/carrottext.text = str(Global.numofcarrots)
+	$Camera2D/berrytext.text =  str(Global.numofberry)
+	$Camera2D/coinstext.text = str(Global.coins)
+
 	
 	if Global.camera_pos == 1:
 		$Camera2D.position.x = camera_pos1x
