@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://trash/farmingTilesheetComplete.png" type="Texture" id=1]
 [ext_resource path="res://scines/player.tscn" type="PackedScene" id=2]
@@ -1127,16 +1127,12 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="DynamicFont" id=22]
+[sub_resource type="DynamicFont" id=12]
 font_data = ExtResource( 16 )
-
-[sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 1 )
-region = Rect2( 64, 80, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 1 )
-region = Rect2( 80, 48, 16, 16 )
+region = Rect2( 64, 80, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 1 )
@@ -1146,16 +1142,15 @@ region = Rect2( 160, 48, 16, 16 )
 atlas = ExtResource( 1 )
 region = Rect2( 128, 32, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=16]
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 1 )
+region = Rect2( 80, 48, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=17]
 animations = [ {
-"frames": [ SubResource( 12 ) ],
-"loop": true,
-"name": "coins",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 13 ) ],
 "loop": true,
-"name": "onion",
+"name": "coins",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 14 ) ],
@@ -1167,21 +1162,53 @@ animations = [ {
 "loop": true,
 "name": "carrot",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 16 ) ],
+"loop": true,
+"name": "onion",
+"speed": 5.0
 } ]
 
-[sub_resource type="DynamicFont" id=23]
+[sub_resource type="DynamicFont" id=18]
 font_data = ExtResource( 16 )
 
-[sub_resource type="DynamicFont" id=24]
+[sub_resource type="DynamicFont" id=19]
 font_data = ExtResource( 16 )
 
-[sub_resource type="DynamicFont" id=25]
+[sub_resource type="DynamicFont" id=20]
 font_data = ExtResource( 16 )
 
-[sub_resource type="RectangleShape2D" id=18]
+[sub_resource type="DynamicFont" id=21]
+font_data = ExtResource( 16 )
+
+[sub_resource type="DynamicFont" id=22]
+font_data = ExtResource( 16 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 1 )
+region = Rect2( 80, 80, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 1 )
+region = Rect2( 96, 80, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=27]
+animations = [ {
+"frames": [ SubResource( 25 ) ],
+"loop": true,
+"name": "moon",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 26 ) ],
+"loop": true,
+"name": "sun",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=23]
 extents = Vector2( 431.47, 10 )
 
-[sub_resource type="RectangleShape2D" id=21]
+[sub_resource type="RectangleShape2D" id=24]
 extents = Vector2( 541.194, 10 )
 
 [node name="world" type="Node2D"]
@@ -1198,12 +1225,6 @@ tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( -65516, 536870935, 0, 17, 536870935, 0, 65564, -1610612729, 0, 65565, -1610612731, 0, 65566, -1610612731, 0, 65567, -1610612731, 0, 65568, -1610612731, 0, 65569, -1610612731, 0, 65570, 1610612743, 0, 196586, 11, 0, 196587, 1610612746, 0, 196588, 1610612746, 0, 196589, 1610612746, 0, 196590, 1610612746, 0, 196591, 1610612743, 0, 131085, 11, 0, 131086, 1610612746, 0, 131087, 1610612743, 0, 131093, -1610612729, 0, 131094, 1610612742, 0, 131095, 1610612742, 0, 131096, 1610612743, 0, 131100, 5, 0, 131101, 4, 0, 131102, 4, 0, 131103, 4, 0, 131104, 4, 0, 131105, 4, 0, 131106, 1610612741, 0, 262127, -1610612726, 0, 262139, -1610612725, 0, 196619, 27, 0, 196620, 27, 0, 196623, -1610612726, 0, 196629, -1610612730, 0, 196630, 4, 0, 196631, 4, 0, 196632, -1073741818, 0, 196636, 5, 0, 196637, 4, 0, 196638, 4, 0, 196639, 4, 0, 196640, 4, 0, 196641, 4, 0, 196642, 1610612741, 0, 327663, -1610612726, 0, 327675, -1610612726, 0, 262155, 27, 0, 262156, 27, 0, 262159, -1610612726, 0, 262165, -1610612730, 0, 262166, 4, 0, 262167, 4, 0, 262168, -1073741818, 0, 262172, 5, 0, 262173, 4, 0, 262174, 4, 0, 262175, 4, 0, 262176, 4, 0, 262177, 4, 0, 262178, 1610612741, 0, 393199, -1610612726, 0, 393211, -1610612726, 0, 327687, 536870935, 0, 327695, -1610612726, 0, 327701, 7, 0, 327702, 1610612736, 0, 327703, 6, 0, 327704, -1073741817, 0, 327707, -1073741801, 0, 327708, 7, 0, 327709, -1073741819, 0, 327710, 6, 0, 327711, 4, 0, 327712, 6, 0, 327713, -1073741819, 0, 327714, -1073741817, 0, 458735, -1610612726, 0, 458747, -1610612726, 0, 393231, -1610612726, 0, 393238, -1073741814, 0, 393247, -1073741814, 0, 524271, -1610612726, 0, 524283, -1610612726, 0, 458767, -1610612726, 0, 458774, -1073741814, 0, 458783, -1073741814, 0, 589805, 11, 0, 589806, 1610612746, 0, 589807, -1610612727, 0, 589808, 1610612746, 0, 589809, 1610612746, 0, 589810, 1610612746, 0, 589811, 1610612746, 0, 589812, 1610612746, 0, 589813, 1610612746, 0, 589814, 1610612746, 0, 589815, 1610612746, 0, 589816, 1610612746, 0, 589817, 10, 0, 589818, 10, 0, 589819, 3, 0, 589820, 10, 0, 589821, 10, 0, 589822, 10, 0, 589823, 10, 0, 524288, 10, 0, 524289, 10, 0, 524290, 10, 0, 524291, 10, 0, 524292, 10, 0, 524293, 10, 0, 524294, 10, 0, 524295, 10, 0, 524296, 10, 0, 524297, 10, 0, 524298, 10, 0, 524299, 1610612746, 0, 524300, 1610612746, 0, 524301, 1610612746, 0, 524302, 1610612746, 0, 524303, -1610612727, 0, 524304, 1610612746, 0, 524305, 1610612746, 0, 524306, 1610612746, 0, 524307, 1610612746, 0, 524308, 1610612746, 0, 524309, 1610612746, 0, 524310, 1610612739, 0, 524311, 1610612746, 0, 524312, 1610612746, 0, 524313, 1610612746, 0, 524314, 1610612746, 0, 524315, 1610612746, 0, 524316, 1610612746, 0, 524317, 1610612746, 0, 524318, 1610612746, 0, 524319, 1610612739, 0, 524320, 10, 0, 524321, 10, 0, 524322, 10, 0, 524323, 10, 0, 524324, 10, 0, 524325, 10, 0, 524326, 10, 0, 524327, 1610612746, 0, 524328, 10, 0, 524329, 10, 0, 524330, 10, 0, 524331, 10, 0, 524332, 10, 0, 524333, 10, 0, 524334, 1610612746, 0, 524335, 1610612746, 0, 524336, 1610612747, 0, 655355, -1610612726, 0, 589824, 27, 0, 589831, 27, 0, 589846, -1610612726, 0, 589855, -1073741814, 0, 720881, 1610612759, 0, 720891, -1610612726, 0, 655360, 27, 0, 655367, 27, 0, 655382, -1610612726, 0, 655391, -1073741814, 0, 786427, -1610612726, 0, 720896, 27, 0, 720903, 27, 0, 720908, -536870889, 0, 720911, -1610612729, 0, 720912, 10, 0, 720913, 10, 0, 720914, 10, 0, 720915, 10, 0, 720916, 10, 0, 720917, 10, 0, 720918, -1073741817, 0, 720927, -1073741814, 0, 851951, 11, 0, 851952, 10, 0, 851953, 10, 0, 851954, 10, 0, 851955, 10, 0, 851956, -1073741815, 0, 851957, 10, 0, 851958, 10, 0, 851959, 10, 0, 851960, 10, 0, 851961, 10, 0, 851962, 10, 0, 851963, 9, 0, 786432, 27, 0, 786439, 27, 0, 786447, -1073741814, 0, 786463, -1073741814, 0, 917491, -1610612729, 0, 917492, -1610612732, 0, 917493, 1610612742, 0, 917494, 1610612743, 0, 917499, -1610612726, 0, 851968, 27, 0, 851969, 27, 0, 851970, 27, 0, 851971, 27, 0, 851972, 27, 0, 851973, 27, 0, 851974, 11, 0, 851975, 10, 0, 851976, 10, 0, 851977, 10, 0, 851978, 10, 0, 851979, 10, 0, 851980, 10, 0, 851981, 10, 0, 851982, 10, 0, 851983, -1073741817, 0, 851999, -1073741814, 0, 983027, -1610612730, 0, 983028, -1610612732, 0, 983029, -1610612732, 0, 983030, -1073741818, 0, 983033, 23, 0, 983035, -1610612726, 0, 917506, 27, 0, 917507, 27, 0, 917535, 7, 0, 917536, 10, 0, 917537, 10, 0, 917538, 10, 0, 917539, 10, 0, 917540, 10, 0, 917541, 1610612747, 0, 1048563, 7, 0, 1048564, 6, 0, 1048565, 6, 0, 1048566, -1073741817, 0, 1048571, -1073741813, 0 )
-
-[node name="carrot_seedpack" parent="." instance=ExtResource( 3 )]
-position = Vector2( -228.388, 51.5766 )
-
-[node name="onion_seedpack" parent="." instance=ExtResource( 4 )]
-position = Vector2( -245.509, 51.2376 )
 
 [node name="area2" type="StaticBody2D" parent="."]
 
@@ -1566,6 +1587,12 @@ position = Vector2( 136.851, 22.1085 )
 [node name="shop" parent="." instance=ExtResource( 8 )]
 position = Vector2( -339.551, 135.74 )
 
+[node name="carrot_seedpack" parent="." instance=ExtResource( 3 )]
+position = Vector2( 366.732, 45.3403 )
+
+[node name="onion_seedpack" parent="." instance=ExtResource( 4 )]
+position = Vector2( 370.102, 72.6192 )
+
 [node name="sellzone" parent="." instance=ExtResource( 7 )]
 position = Vector2( -389.087, 98.309 )
 scale = Vector2( 1, 1 )
@@ -1600,7 +1627,7 @@ margin_left = 187.914
 margin_top = -139.562
 margin_right = 208.914
 margin_bottom = -124.562
-custom_fonts/normal_font = SubResource( 22 )
+custom_fonts/normal_font = SubResource( 12 )
 text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1609,7 +1636,7 @@ __meta__ = {
 [node name="coinsicon" type="AnimatedSprite" parent="Camera2D"]
 position = Vector2( 183.451, -133.101 )
 scale = Vector2( 0.471843, 0.469381 )
-frames = SubResource( 16 )
+frames = SubResource( 17 )
 animation = "coins"
 
 [node name="bar" parent="Camera2D" instance=ExtResource( 14 )]
@@ -1619,7 +1646,7 @@ scale = Vector2( 0.6, 0.759999 )
 [node name="carroticon" type="AnimatedSprite" parent="Camera2D"]
 position = Vector2( -116.293, 124.436 )
 scale = Vector2( 1.2, 1.4 )
-frames = SubResource( 16 )
+frames = SubResource( 17 )
 animation = "carrot"
 
 [node name="carrottext" type="RichTextLabel" parent="Camera2D"]
@@ -1627,7 +1654,7 @@ margin_left = -129.404
 margin_top = 126.58
 margin_right = -98.404
 margin_bottom = 142.58
-custom_fonts/normal_font = SubResource( 23 )
+custom_fonts/normal_font = SubResource( 18 )
 text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1636,7 +1663,7 @@ __meta__ = {
 [node name="onionicon" type="AnimatedSprite" parent="Camera2D"]
 position = Vector2( -88.1396, 125.003 )
 scale = Vector2( 1.2, 1.4 )
-frames = SubResource( 16 )
+frames = SubResource( 17 )
 animation = "onion"
 
 [node name="oniontext" type="RichTextLabel" parent="Camera2D"]
@@ -1644,7 +1671,7 @@ margin_left = -104.209
 margin_top = 126.64
 margin_right = -64.2092
 margin_bottom = 143.64
-custom_fonts/normal_font = SubResource( 24 )
+custom_fonts/normal_font = SubResource( 19 )
 text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1653,7 +1680,7 @@ __meta__ = {
 [node name="berryicon" type="AnimatedSprite" parent="Camera2D"]
 position = Vector2( -59.2717, 125.233 )
 scale = Vector2( 1.2, 1.4 )
-frames = SubResource( 16 )
+frames = SubResource( 17 )
 animation = "berry"
 
 [node name="berrytext" type="RichTextLabel" parent="Camera2D"]
@@ -1661,11 +1688,38 @@ margin_left = -74.9516
 margin_top = 126.553
 margin_right = -34.9516
 margin_bottom = 143.553
-custom_fonts/normal_font = SubResource( 25 )
+custom_fonts/normal_font = SubResource( 20 )
 text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Day_text" type="RichTextLabel" parent="Camera2D"]
+margin_left = -202.324
+margin_top = -139.213
+margin_right = -162.324
+margin_bottom = -99.2126
+custom_fonts/normal_font = SubResource( 21 )
+text = "Day"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="numoofday" type="RichTextLabel" parent="Camera2D"]
+margin_left = -182.15
+margin_top = -138.324
+margin_right = -142.15
+margin_bottom = -83.3239
+custom_fonts/normal_font = SubResource( 22 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sun_moon" type="AnimatedSprite" parent="Camera2D"]
+position = Vector2( -195.204, -117.326 )
+frames = SubResource( 27 )
+animation = "moon"
 
 [node name="chicken" parent="." instance=ExtResource( 13 )]
 position = Vector2( 73.5299, 66.8336 )
@@ -1675,35 +1729,36 @@ position = Vector2( 7.74493, 8.28616 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="walls"]
 position = Vector2( 5.14603, 283.005 )
-shape = SubResource( 18 )
+shape = SubResource( 23 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="walls"]
 position = Vector2( -440.205, 89.862 )
 rotation = -1.57079
-shape = SubResource( 18 )
+shape = SubResource( 23 )
 
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="walls"]
 position = Vector2( 944.466, -7.87762 )
-shape = SubResource( 21 )
+shape = SubResource( 24 )
 
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="walls"]
 position = Vector2( 858.745, -27.7034 )
 rotation = 1.57079
-shape = SubResource( 21 )
+shape = SubResource( 24 )
 
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="walls"]
 position = Vector2( 648.513, 276.98 )
-shape = SubResource( 21 )
+shape = SubResource( 24 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="walls"]
 position = Vector2( 7.44149, -18.1531 )
-shape = SubResource( 18 )
+shape = SubResource( 23 )
 
 [node name="player" parent="." instance=ExtResource( 2 )]
-position = Vector2( -192.986, 147.57 )
+position = Vector2( 234.97, 127.768 )
 
 [node name="day_and _night" parent="." instance=ExtResource( 15 )]
-position = Vector2( 182.727, 42.2483 )
+position = Vector2( 240.408, 35.0239 )
+scale = Vector2( 3.95799, 4.47 )
 
 [connection signal="body_entered" from="area2/openfarmingzone" to="." method="_on_openfarmingzone2_body_entered"]
 [connection signal="body_entered" from="area3/openfarmingzone" to="." method="_on_openfarmingzone2_body_entered"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://trash/farmingTilesheetComplete.png" type="Texture" id=1]
+[ext_resource path="res://trash/PixelPurl.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://scritps/shopmenu.gd" type="Script" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
@@ -11,7 +12,7 @@ region = Rect2( 16, 64, 16, 16 )
 atlas = ExtResource( 1 )
 region = Rect2( 192, 64, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=10]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ SubResource( 1 ) ],
 "loop": true,
@@ -28,7 +29,7 @@ animations = [ {
 atlas = ExtResource( 1 )
 region = Rect2( 176, 80, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=11]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
 "frames": [ SubResource( 4 ) ],
 "loop": true,
@@ -40,7 +41,7 @@ animations = [ {
 atlas = ExtResource( 1 )
 region = Rect2( 176, 80, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=12]
+[sub_resource type="SpriteFrames" id=7]
 animations = [ {
 "frames": [ SubResource( 6 ) ],
 "loop": true,
@@ -60,6 +61,9 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="DynamicFont" id=10]
+font_data = ExtResource( 2 )
+
 [node name="shopmenu" type="StaticBody2D"]
 script = ExtResource( 3 )
 
@@ -71,7 +75,7 @@ __meta__ = {
 [node name="icon" type="AnimatedSprite" parent="."]
 position = Vector2( 12.0146, 10.9861 )
 scale = Vector2( 1.53886, 1.45524 )
-frames = SubResource( 10 )
+frames = SubResource( 3 )
 animation = "berryseed"
 
 [node name="Buttonleft" type="Button" parent="."]
@@ -87,32 +91,34 @@ __meta__ = {
 position = Vector2( 8.53091, 11.3627 )
 rotation = 1.55866
 scale = Vector2( 1.59282, 1.61533 )
-frames = SubResource( 11 )
+frames = SubResource( 5 )
 
 [node name="Buttonright" type="Button" parent="."]
-margin_left = 13.8245
-margin_top = 20.5138
-margin_right = 25.8245
-margin_bottom = 40.5138
+margin_left = 14.0
+margin_top = 21.0
+margin_right = 26.0
+margin_bottom = 41.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Buttonright"]
-position = Vector2( 3.49329, 10.0339 )
+position = Vector2( 3.49329, 10.2441 )
 rotation = -1.56247
 scale = Vector2( 1.48643, 1.71946 )
-frames = SubResource( 12 )
+frames = SubResource( 7 )
 
 [node name="coins" type="AnimatedSprite" parent="."]
-position = Vector2( 60.2036, 10.5542 )
+position = Vector2( 57.4707, 12.4462 )
+scale = Vector2( 0.632107, 0.632108 )
 frames = SubResource( 9 )
 
 [node name="pricelabel" type="RichTextLabel" parent="."]
-margin_left = 26.1626
-margin_top = 3.97716
-margin_right = 66.1626
-margin_bottom = 43.9772
+margin_left = 36.409
+margin_top = 5.05112
+margin_right = 55.409
+margin_bottom = 20.0511
+custom_fonts/normal_font = SubResource( 10 )
 text = "100"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -130,10 +136,11 @@ __meta__ = {
 
 [node name="buybotton" type="Button" parent="."]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 29.1081
-margin_top = 21.1892
-margin_right = 73.1081
-margin_bottom = 41.1892
+margin_left = 30.5797
+margin_top = 21.6096
+margin_right = 74.5797
+margin_bottom = 41.6096
+text = "Buy"
 __meta__ = {
 "_edit_use_anchors_": false
 }

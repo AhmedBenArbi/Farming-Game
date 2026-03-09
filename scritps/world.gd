@@ -40,7 +40,7 @@ func _physics_process(delta):
 	$Camera2D/carrottext.text = str(Global.numofcarrots)
 	$Camera2D/berrytext.text =  str(Global.numofberry)
 	$Camera2D/coinstext.text = str(Global.coins)
-
+	$Camera2D/numoofday.text = str(Global.numofday)
 	
 	if Global.camera_pos == 1:
 		$Camera2D.position.x = camera_pos1x
@@ -51,7 +51,10 @@ func _physics_process(delta):
 	elif Global.camera_pos == 3:
 		$Camera2D.position.x = camera_pos3x
 		$Camera2D.position.y = camera_pos3y
-
+	if Global.night_time:
+		$Camera2D/sun_moon.play("moon")
+	else:
+		$Camera2D/sun_moon.play("sun")
 func _on_Timer_timeout():
 	if current_weather == "none":
 		current_weather = "rain"

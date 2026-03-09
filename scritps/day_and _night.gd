@@ -5,17 +5,24 @@ var state = "day"
 
 var change_state = false
 
-var length_of_day = 10
-var length_of_night = 5
+var length_of_day = 60
+var length_of_night = 25
 
 
 func _on_Timer_timeout():
 	if state == "day":
 		state = "night"
-		Global.night_time = true
+		if Global.san_moon == "san":
+			Global.san_moon = "moon"
+			
+			Global.night_time = true
 	elif state == "night":
 		state = "day"
+		if Global.san_moon == "moon":
+			Global.san_moon = "san"
+			
 		Global.night_time = false
+		Global.numofday += 1
 		
 	change_state = true
 
