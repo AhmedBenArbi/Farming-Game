@@ -2,17 +2,26 @@ extends StaticBody2D
 
 func _ready():
 	$AnimatedSprite.play("close")
-	$doorcol.disabled = true
+	$doorcol.disabled = false
 
 
+
+var player_insde_area = false
 func _on_Area2D_body_entered(body):
-	if body.has_method("player_open_close_method"):
-		$doorcol.disabled = false
+		player_insde_area = true
+		
+		
+		
+func _physics_process(delta):
+	
+	if Input.is_action_just_pressed("open") and player_insde_area:
+		$doorcol.disabled = true
 		$AnimatedSprite.play("open")
+	if Input.is_action_just_pressed("close") and player_insde_area:
+			$doorcol.disabled = false
+			$AnimatedSprite.play("close")
 
 
-func _on_Timer_timeout():
-	$AnimatedSprite.play("close")
-	$doorcol.disabled = true
-	$Timer.wait_time = 5
-	$Timer.start()
+
+
+

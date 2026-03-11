@@ -56,8 +56,7 @@ position = Vector2( -0.630676, 14.5055 )
 shape = SubResource( 6 )
 
 [node name="shopmenu" parent="." instance=ExtResource( 3 )]
-visible = false
-position = Vector2( -32.0362, -51.0577 )
+position = Vector2( -48.7227, -49.9982 )
 
 [node name="berry_seedpack" parent="." instance=ExtResource( 4 )]
 visible = false

@@ -18,31 +18,31 @@ func _physics_process(delta):
 			$sell_label.text = ("Sell One  " + str(item1price))
 			$sellall_label.text = ("Sell All  " + str(item1price * Global.numofcarrots))
 			if Global.numofcarrots > 0:
-				 $sellbottoncolor.color = "b24fc642"
-				 $sellallbottoncolor.color = "b24fc642"
+				 $sellbotton.modulate = "b24fc642"
+				 $sellallbotton.modulate = "b24fc642"
 			else:
-				$sellbottoncolor.color = "b2c64242"
-				$sellallbottoncolor.color = "b2c64242"
+				$sellbotton.modulate = "b2c64242"
+				$sellallbotton.modulate = "b2c64242"
 		if item == 2:
 			$icon.play("onion")
 			$sell_label.text = ("Sell One  " + str(item2price))
 			$sellall_label.text = ("Sell All  " + str(item2price * Global.numofonions))
 			if Global.numofonions > 0:
-				 $sellbottoncolor.color = "b24fc642"
-				 $sellallbottoncolor.color = "b24fc642"
+				 $sellbotton.modulate = "b24fc642"
+				 $sellallbotton.modulate = "b24fc642"
 			else:
-				$sellbottoncolor.color = "b2c64242"
-				$sellallbottoncolor.color = "b2c64242"
+				$sellbotton.modulate = "b2c64242"
+				$sellallbotton.modulate = "b2c64242"
 		if item == 3:
 			$icon.play("berry")
 			$sell_label.text = ("Sell One  " + str(item3price))
 			$sellall_label.text = ("Sell All  " + str(item3price * Global.numofberry))
 			if Global.numofberry > 0:
-				 $sellbottoncolor.color = "b24fc642"
-				 $sellallbottoncolor.color = "b24fc642"
+				 $sellbotton.modulate = "b24fc642"
+				 $sellallbotton.modulate = "b24fc642"
 			else:
-				$sellbottoncolor.color = "b2c64242"
-				$sellallbottoncolor.color = "b2c64242"
+				$sellbotton.modulate = "b2c64242"
+				$sellallbotton.modulate = "b2c64242"
 
 
 

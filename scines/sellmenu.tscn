@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://trash/farmingTilesheetComplete.png" type="Texture" id=1]
 [ext_resource path="res://scines/sellmenu.gd" type="Script" id=2]
@@ -6,31 +6,57 @@
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
-region = Rect2( 80, 48, 16, 16 )
+region = Rect2( 160, 48, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
-region = Rect2( 160, 48, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 1 )
 region = Rect2( 128, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 80, 48, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [ SubResource( 1 ) ],
 "loop": true,
-"name": "onion",
+"name": "berry",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 2 ) ],
 "loop": true,
-"name": "berry",
+"name": "carrot",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 11 ) ],
+"frames": [ SubResource( 3 ) ],
 "loop": true,
-"name": "carrot",
+"name": "onion",
+"speed": 5.0
+} ]
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0, 0, 0, 0.290196 )
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0, 0, 0, 0.290196 )
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 176, 80, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ SubResource( 7 ) ],
+"loop": true,
+"name": "default",
 "speed": 5.0
 } ]
 
@@ -46,171 +72,150 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 1 )
-region = Rect2( 176, 80, 16, 16 )
-
-[sub_resource type="SpriteFrames" id=8]
-animations = [ {
-"frames": [ SubResource( 7 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="DynamicFont" id=9]
 size = 32
 
-[sub_resource type="DynamicFont" id=15]
+[sub_resource type="DynamicFont" id=10]
 font_data = ExtResource( 3 )
 
-[sub_resource type="Theme" id=16]
+[sub_resource type="Theme" id=11]
 
-[sub_resource type="DynamicFont" id=17]
+[sub_resource type="StyleBoxFlat" id=18]
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="DynamicFont" id=12]
 font_data = ExtResource( 3 )
 
-[sub_resource type="StyleBoxFlat" id=13]
+[sub_resource type="StyleBoxFlat" id=19]
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 1 )
 region = Rect2( 64, 80, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=10]
+[sub_resource type="SpriteFrames" id=15]
 animations = [ {
-"frames": [ SubResource( 9 ) ],
+"frames": [ SubResource( 14 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
 [node name="sellmenu" type="StaticBody2D"]
+position = Vector2( 13.0147, 3.67081 )
 script = ExtResource( 2 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="icon" type="AnimatedSprite" parent="."]
-position = Vector2( 16.0261, 9.09835 )
+position = Vector2( 15.5814, 16.7737 )
 scale = Vector2( 1.53886, 1.45524 )
 frames = SubResource( 4 )
 animation = "carrot"
 
 [node name="Buttonleft" type="Button" parent="."]
-margin_left = 0.817583
-margin_top = 21.0341
-margin_right = 12.8176
-margin_bottom = 41.0341
+margin_left = 13.6674
+margin_top = 28.0
+margin_right = 25.6674
+margin_bottom = 42.0
+custom_styles/normal = SubResource( 16 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Buttonleft"]
-position = Vector2( 8.53091, 11.3627 )
-rotation = 1.55866
-scale = Vector2( 1.59282, 1.61533 )
-frames = SubResource( 6 )
-
 [node name="Buttonright" type="Button" parent="."]
-margin_left = 13.8245
-margin_top = 20.5138
-margin_right = 25.8245
-margin_bottom = 40.5138
+margin_left = 0.317886
+margin_top = 27.5051
+margin_right = 12.3179
+margin_bottom = 41.5051
+custom_styles/normal = SubResource( 17 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Buttonright"]
-position = Vector2( 3.49329, 9.92254 )
+position = Vector2( 17.0086, 6.41857 )
 rotation = -1.56247
 scale = Vector2( 1.48643, 1.71946 )
 frames = SubResource( 8 )
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Buttonright"]
+position = Vector2( 8.36518, 7.8531 )
+rotation = 1.55866
+scale = Vector2( 1.59282, 1.61533 )
+frames = SubResource( 6 )
 
 [node name="price" type="Label" parent="."]
 margin_left = 51.072
 margin_top = 2.80615
 margin_right = 91.072
 margin_bottom = 16.8062
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 9 )
 text = "10"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="sellbottoncolor" type="ColorRect" parent="."]
-margin_left = 30.0
-margin_top = 20.0
-margin_right = 99.0
-margin_bottom = 31.0
-color = Color( 1, 1, 1, 0.572549 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="sell_label" type="Label" parent="."]
-margin_left = 32.0
-margin_top = 19.0
-margin_right = 99.0
-margin_bottom = 33.0
-custom_fonts/font = SubResource( 15 )
+margin_left = 37.8535
+margin_top = 12.5512
+margin_right = 104.854
+margin_bottom = 26.5512
+custom_fonts/font = SubResource( 10 )
 text = "Sell One"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="sellbotton" type="Button" parent="."]
-modulate = Color( 1, 1, 1, 0 )
-margin_left = 29.9988
-margin_top = 10.8513
-margin_right = 100.999
-margin_bottom = 30.8513
-theme = SubResource( 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="sellallbottoncolor" type="ColorRect" parent="."]
-margin_left = 30.0
-margin_top = 32.0
-margin_right = 99.0
-margin_bottom = 43.0
-color = Color( 1, 1, 1, 0.572549 )
+modulate = Color( 0, 0, 0, 0.290196 )
+margin_left = 28.2976
+margin_top = 13.1071
+margin_right = 107.298
+margin_bottom = 27.1071
+theme = SubResource( 11 )
+custom_styles/normal = SubResource( 18 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="sellall_label" type="Label" parent="."]
-margin_left = 32.0
-margin_top = 31.0
-margin_right = 92.0
-margin_bottom = 45.0
-custom_fonts/font = SubResource( 17 )
+margin_left = 39.1748
+margin_top = 29.3315
+margin_right = 99.1748
+margin_bottom = 43.3315
+custom_fonts/font = SubResource( 12 )
 text = "Sell All"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="sellallbotton" type="Button" parent="."]
-modulate = Color( 1, 1, 1, 0 )
-margin_left = 30.4388
-margin_top = 31.4221
-margin_right = 98.4388
-margin_bottom = 51.4221
-custom_styles/hover = SubResource( 13 )
+modulate = Color( 0, 0, 0, 0.290196 )
+margin_left = 106.87
+margin_top = 28.7068
+margin_right = 120.87
+margin_bottom = 107.707
+rect_min_size = Vector2( 0, 14 )
+rect_rotation = 90.009
+custom_styles/normal = SubResource( 19 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="coins" type="AnimatedSprite" parent="."]
-position = Vector2( 79.5368, 25.9964 )
+position = Vector2( 85.7872, 20.8373 )
 scale = Vector2( 0.640461, 0.649231 )
-frames = SubResource( 10 )
+frames = SubResource( 15 )
 
 [node name="coins2" type="AnimatedSprite" parent="."]
-position = Vector2( 73.5908, 37.7739 )
+position = Vector2( 81.433, 35.4379 )
 scale = Vector2( 0.605385, 0.579077 )
-frames = SubResource( 10 )
+frames = SubResource( 15 )
 
 [connection signal="pressed" from="Buttonleft" to="." method="_on_Buttonleft_pressed"]
 [connection signal="pressed" from="Buttonright" to="." method="_on_Buttonright_pressed"]

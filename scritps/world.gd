@@ -16,7 +16,8 @@ func _ready():
 		$AudioStreamPlayer.play()
 	if current_weather == "rain":
 		$AudioStreamPlayer.stop()
-	
+		
+
 func _physics_process(delta):
 	if(Global.numofonions > 0):
 		$Camera2D/oniontext.visible = true
@@ -70,16 +71,6 @@ func _on_Timer_timeout():
 func _on_openfarmingzone_body_entered(body):
 	if body.has_method("player"):
 		pass
-
-
-
-
-
-
-
-
-
-
 
 
 

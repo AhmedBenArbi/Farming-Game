@@ -22,7 +22,7 @@ func _on_Timer_timeout():
 		$Timer.start()
 	elif current_weather == "rain":
 		current_weather = "none"
-		$Timer.wait_time = rand_range(20,30)
+		$Timer.wait_time = rand_range(40,60)
 		$Timer.start()
 		
 	

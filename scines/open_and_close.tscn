@@ -21,7 +21,7 @@ animations = [ {
 "frames": [ SubResource( 2 ) ],
 "loop": true,
 "name": "open",
-"speed": 5.0
+"speed": 0.0
 } ]
 
 [sub_resource type="CircleShape2D" id=4]
@@ -31,7 +31,7 @@ radius = 5.21124
 extents = Vector2( 6.96573, 5.04533 )
 
 [node name="open_and_close_door" type="StaticBody2D"]
-rotation = 3.14159
+rotation = 1.5708
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -44,11 +44,12 @@ position = Vector2( -0.25, 0.25 )
 rotation = 1.57079
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite/Area2D"]
-position = Vector2( 10.0838, 0.137529 )
+position = Vector2( 12.0703, -0.0611248 )
 shape = SubResource( 4 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="AnimatedSprite/Area2D"]
-position = Vector2( -10.3307, -0.112143 )
+position = Vector2( -12.7617, -0.302912 )
+rotation = 1.5708
 shape = SubResource( 4 )
 
 [node name="Timer" type="Timer" parent="."]
@@ -61,4 +62,5 @@ position = Vector2( -0.0747581, -0.0410931 )
 shape = SubResource( 5 )
 
 [connection signal="body_entered" from="AnimatedSprite/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="AnimatedSprite/Area2D" to="." method="_on_Area2D_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
