@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Farming Game"
-run/main_scene="res://scines/world.tscn"
+run/main_scene="res://scines/Main menu.tscn"
 config/icon="res://trash/icon.png"
 
 [autoload]

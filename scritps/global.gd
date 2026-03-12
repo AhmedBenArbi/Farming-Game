@@ -9,6 +9,17 @@ var farming_zone_owned = false
 var plantselected = 1
 var night_time = false
 
+func _ready():
+	var file = File.new()
+	if file.file_exists("user://savegame.save"):
+		file.open("user://savegame.save", File.READ)
+		var data = parse_json(file.get_as_text())
+		coins = data["coins"]
+		numofcarrots = data["numofcarrots"]
+		file.close()
+
+
+
 var numofapple = 0
 var san_moon = "san"
 var weather

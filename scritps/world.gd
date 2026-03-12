@@ -17,7 +17,11 @@ func _ready():
 	if current_weather == "rain":
 		$AudioStreamPlayer.stop()
 		
-
+func _notification(what):
+	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
+		SaveSystem.save_game({"coins":Global.coins,"numofcarrots":Global.numofcarrots})
+		get_tree().quit()
+	
 func _physics_process(delta):
 	if(Global.numofonions > 0):
 		$Camera2D/oniontext.visible = true

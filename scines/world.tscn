@@ -1349,22 +1349,22 @@ font_data = ExtResource( 16 )
 
 [sub_resource type="AtlasTexture" id=23]
 atlas = ExtResource( 1 )
-region = Rect2( 96, 80, 16, 16 )
+region = Rect2( 80, 80, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=24]
 atlas = ExtResource( 1 )
-region = Rect2( 80, 80, 16, 16 )
+region = Rect2( 96, 80, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=25]
 animations = [ {
 "frames": [ SubResource( 23 ) ],
 "loop": true,
-"name": "sun",
+"name": "moon",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 24 ) ],
 "loop": true,
-"name": "moon",
+"name": "sun",
 "speed": 5.0
 } ]
 

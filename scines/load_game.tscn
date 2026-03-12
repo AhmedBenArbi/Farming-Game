@@ -1,0 +1,139 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://trash/PixelPurl.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://trash/Magero.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scines/load_game.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.0470588, 0.647059, 0.141176, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 0, 0, 0.345098 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.0862745, 0.227451, 0.0980392, 0.964706 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.141176, 1, 0, 0.862745 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.0862745, 0.227451, 0.0980392, 0.635294 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="DynamicFont" id=9]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 64
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=11]
+font_data = ExtResource( 1 )
+
+[node name="load_game" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 0.374573
+margin_right = 422.375
+margin_bottom = 279.0
+color = Color( 0.0235294, 0.266667, 0.105882, 0.337255 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="back" type="Button" parent="."]
+margin_left = 17.2426
+margin_top = 244.414
+margin_right = 70.2426
+margin_bottom = 266.414
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+text = "< back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 92.6152
+margin_top = 85.9289
+margin_right = 197.615
+margin_bottom = 147.929
+rect_scale = Vector2( 2.37505, 2.4804 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Game Save 1" type="Button" parent="VBoxContainer"]
+margin_right = 105.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 0, 18 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
+text = "Game Save 1"
+
+[node name="Game Save 2" type="Button" parent="VBoxContainer"]
+margin_top = 22.0
+margin_right = 105.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 18 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
+text = "Game save 2"
+
+[node name="Game Save 3" type="Button" parent="VBoxContainer"]
+margin_top = 44.0
+margin_right = 105.0
+margin_bottom = 62.0
+rect_min_size = Vector2( 0, 18 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
+text = "game save 3"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 57.3137
+margin_top = 9.29289
+margin_right = 506.314
+margin_bottom = 63.2929
+custom_fonts/normal_font = SubResource( 10 )
+text = "LOAD GAME"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 135.317
+margin_top = 61.8929
+margin_right = 300.317
+margin_bottom = 75.8929
+custom_fonts/font = SubResource( 11 )
+text = "Please Choose your game save"
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="VBoxContainer/Game Save 1" to="." method="_on_Game_Save_1_pressed"]
