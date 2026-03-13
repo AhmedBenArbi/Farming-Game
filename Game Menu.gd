@@ -1,0 +1,29 @@
+extends Node2D
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = "text"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	self.visible = false
+	pass # Replace with function body.
+
+
+func _physics_process(delta):
+	if Input.is_action_just_pressed("pause"):
+		self.visible = true
+
+func _on_pause_pressed():
+		pass # Replace with function body.
+
+
+func _on_sttings_pressed():
+	pass # Replace with function body.
+
+
+func _on_exit_pressed():
+	get_tree().change_scene("res://scines/Main menu.tscn")
+	pass # Replace with function body.

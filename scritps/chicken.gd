@@ -41,7 +41,8 @@ func _physics_process(delta):
 		$AnimatedSprite.play("eating")
 		motion.x = 0
 		motion.y = 0
-		
+	
+
 	
 	
 	move_and_slide(motion)
@@ -79,3 +80,16 @@ func _on_walkingtimer_timeout():
 	$walkingtimer.start()
 
 
+func spawn_egg():
+	var Egg = preload("res://scines/egg.tscn")
+	var egg = Egg.instance()
+	egg.position = self.position
+	get_parent().add_child(egg)
+
+
+
+
+
+func _on_Timer_timeout():
+	spawn_egg()
+	pass 

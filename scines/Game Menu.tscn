@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://trash/PixelPurl.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Game Menu.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 64
+font_data = ExtResource( 1 )
+
+[node name="Game Menu" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 159.0
+margin_top = 32.0
+margin_right = 265.0
+margin_bottom = 225.0
+color = Color( 0, 0, 0, 0.447059 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 171.556
+margin_top = 89.8984
+margin_right = 221.556
+margin_bottom = 157.898
+rect_scale = Vector2( 1.47144, 1.78448 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pause" type="Button" parent="VBoxContainer"]
+margin_right = 50.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 1 )
+text = "pause"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sttings" type="Button" parent="VBoxContainer"]
+margin_top = 24.0
+margin_right = 50.0
+margin_bottom = 44.0
+custom_fonts/font = SubResource( 2 )
+text = "stting"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="exit" type="Button" parent="VBoxContainer"]
+margin_top = 48.0
+margin_right = 50.0
+margin_bottom = 68.0
+custom_fonts/font = SubResource( 3 )
+text = "exit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 161.95
+margin_top = 31.2548
+margin_right = 265.95
+margin_bottom = 144.255
+custom_fonts/font = SubResource( 4 )
+text = "Menu
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="VBoxContainer/pause" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="VBoxContainer/sttings" to="." method="_on_sttings_pressed"]
+[connection signal="pressed" from="VBoxContainer/exit" to="." method="_on_exit_pressed"]

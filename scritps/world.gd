@@ -1,28 +1,26 @@
 extends Node2D
 
-var current_weather = "none"
 
+var current_weather = "none"
 const camera_pos1x = 210
 const camera_pos1y = 140
-
 const camera_pos2x = -218
 const camera_pos2y = 140
-
 const camera_pos3x = 644
 const camera_pos3y = 140
-
 func _ready():
 	if current_weather == "none":
 		$AudioStreamPlayer.play()
 	if current_weather == "rain":
 		$AudioStreamPlayer.stop()
-		
-func _notification(what):
-	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
-		SaveSystem.save_game({"coins":Global.coins,"numofcarrots":Global.numofcarrots})
-		get_tree().quit()
-	
+
 func _physics_process(delta):
+	if(Global.numofegg > 0):
+		$Camera2D/eggtext.visible = true
+		$Camera2D/eggicon.visible = true
+	elif(Global.numofegg == 0):
+		$Camera2D/eggtext.visible = false
+		$Camera2D/eggicon.visible = false
 	if(Global.numofonions > 0):
 		$Camera2D/oniontext.visible = true
 		$Camera2D/onionicon.visible = true
@@ -46,6 +44,7 @@ func _physics_process(delta):
 	$Camera2D/berrytext.text =  str(Global.numofberry)
 	$Camera2D/coinstext.text = str(Global.coins)
 	$Camera2D/numoofday.text = str(Global.numofday)
+	$Camera2D/eggtext.text = str(Global.numofegg)
 	
 	if Global.camera_pos == 1:
 		$Camera2D.position.x = camera_pos1x
@@ -69,12 +68,13 @@ func _on_Timer_timeout():
 		current_weather = "none"
 		$Timer.wait_time = rand_range(20,30)
 		$Timer.start()
-
-
-
 func _on_openfarmingzone_body_entered(body):
 	if body.has_method("player"):
 		pass
+
+
+
+
 
 
 
