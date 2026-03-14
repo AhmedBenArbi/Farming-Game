@@ -15,3 +15,6 @@ func _on_Timer_timeout():
 	if percentage == 110:
 		get_tree().change_scene("res://scines/world.tscn")
 
+
+
+

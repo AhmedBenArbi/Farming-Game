@@ -102,10 +102,10 @@ scale = Vector2( 0.449248, 0.449248 )
 texture = ExtResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -72.0973
-margin_top = -58.4261
-margin_right = 542.903
-margin_bottom = 354.574
+margin_left = -103.845
+margin_top = -80.6497
+margin_right = 511.155
+margin_bottom = 332.35
 color = Color( 0, 0, 0, 0.352941 )
 __meta__ = {
 "_edit_use_anchors_": false

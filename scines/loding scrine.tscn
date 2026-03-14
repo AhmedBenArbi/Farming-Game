@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://trash/farmingTilesheetComplete.png" type="Texture" id=1]
 [ext_resource path="res://trash/PixelPurl.ttf" type="DynamicFontData" id=2]
@@ -60,6 +60,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( 0, 30 ), Vector2( 36, 30 ), Vector2( 72, 30 ), Vector2( 108, 30 ), Vector2( 144, 30 ), Vector2( 180, 30 ), Vector2( 216, 30 ), Vector2( 252, 30 ), Vector2( 288, 30 ), Vector2( 324, 30 ), Vector2( 366, 30 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("colorbar:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.0784314, 1, 0, 1 ), Color( 0.0941176, 0.764706, 0.0392157, 1 ), Color( 0.0745098, 0.635294, 0.027451, 1 ), Color( 0.0588235, 0.47451, 0.0235294, 1 ), Color( 0.0470588, 0.376471, 0.0196078, 1 ), Color( 0.027451, 0.235294, 0.0117647, 1 ), Color( 0.054902, 0.45098, 0.027451, 1 ), Color( 0.0705882, 0.611765, 0.0313726, 1 ), Color( 0.0862745, 0.756863, 0.0392157, 1 ), Color( 0.101961, 0.843137, 0.0509804, 1 ), Color( 0.0627451, 1, 0, 1 ) ]
+}
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 1 )
@@ -80,6 +92,9 @@ animations = [ {
 "name": "default",
 "speed": 1.0
 } ]
+
+[sub_resource type="DynamicFont" id=12]
+font_data = ExtResource( 2 )
 
 [node name="loding scrine" type="Node2D"]
 script = ExtResource( 3 )
@@ -107,7 +122,7 @@ __meta__ = {
 anims/blackgreentowhitegreen = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 211.191, 200.744 )
+position = Vector2( 275.519, 200.744 )
 scale = Vector2( 3.23228, 3.48031 )
 frames = SubResource( 5 )
 animation = "carrot_growing"
@@ -118,16 +133,16 @@ margin_left = 26.0
 margin_top = 242.0
 margin_right = 392.0
 margin_bottom = 272.0
-color = Color( 0.482353, 0.305882, 0.305882, 1 )
+color = Color( 0.0627451, 1, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="."]
-margin_left = 249.016
-margin_top = 198.993
-margin_right = 319.016
-margin_bottom = 238.993
+margin_left = 205.173
+margin_top = 203.891
+margin_right = 275.173
+margin_bottom = 243.891
 custom_fonts/font = SubResource( 6 )
 text = "0%"
 __meta__ = {
@@ -141,10 +156,28 @@ autostart = true
 "anims/loding bar" = SubResource( 7 )
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
-position = Vector2( 169.044, 204.643 )
+position = Vector2( 159.033, 204.643 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 11 )
 frame = 2
 playing = true
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 1.78381
+margin_top = 12.4867
+margin_right = 439.784
+margin_bottom = 227.487
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0.270588, 1, 0.121569, 1 )
+text = "/press E to open and close the door
+/click the seed pack and plant it
+/make sure sell every thing before night
+/buy a new a farm place 
+/buy a ckicken and sell the egg
+/click to pickup the plant
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

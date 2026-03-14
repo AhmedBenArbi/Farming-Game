@@ -12,7 +12,7 @@ func _on_load_pressed():
 
 
 func _on_play_pressed():
-	get_tree().change_scene("res://scines/loding scrine.tscn")
+	get_tree().change_scene("res://scines/world.tscn")
 	pass 
 
 
